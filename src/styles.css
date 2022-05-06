@@ -43,7 +43,7 @@ form {
 .form-group input,
 .form-group textarea {
   padding: .6em;
-  color: var(--white);
+  color: var(--main-color);
   font-size: 0.8em;
 }
 
@@ -61,4 +61,11 @@ input[type="submit"]:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
   background-color: transparent;
+}
+
+.validation-error p {
+  color: #DC3545;
+  margin-top: 0.4em;
+  border-left: 3px solid #DC3545;
+  padding-left: 0.2em;
 }
