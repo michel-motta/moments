@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Moment } from 'src/app/Moment';
 
+import { MomentService } from 'src/app/services/moment.service';
+
 @Component({
   selector: 'app-new-moment',
   templateUrl: './new-moment.component.html',
@@ -9,7 +11,7 @@ import { Moment } from 'src/app/Moment';
 export class NewMomentComponent implements OnInit {
   btnText = 'Compartilhar!';
 
-  constructor() { }
+  constructor(private momentService: MomentService) { }
 
   ngOnInit(): void {
   }
@@ -24,10 +26,6 @@ export class NewMomentComponent implements OnInit {
       formData.append('image', moment.image);
     }
 
-    // enviar para o service
-
-    // exibir msg
-
-    // redirect
+    await this.momentService.createMoment(formData).subscribe();
   }
 }
